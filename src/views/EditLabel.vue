@@ -5,8 +5,9 @@
       <span class="title">编辑标签</span>
       <span class="rightIcon"/>
     </div>
-    <div class="from-wrapper">
-      <FormItem :value="tag.name" field-name="标签名" placeholder="请输入标签名"/>
+    <div class="form-wrapper">
+      <FormItem :value="tag.name"
+                field-name="标签名" placeholder="请输入标签名"/>
     </div>
     <div class="button-wrapper">
       <Button @click="remove">刪除标签</Button>
@@ -71,11 +72,9 @@
     justify-content: space-between;
 
     > .title {
-
     }
 
     > .lefIcon {
-
       width: 24px;
       height: 24px;
     }
@@ -86,7 +85,7 @@
     }
   }
 
-  .from-wrapper {
+  .form-wrapper {
     background: white;
     margin-top: 8px;
   }
@@ -94,6 +93,7 @@
   .button-wrapper {
     text-align: center;
     padding: 16px;
+    margin-top: 44-16px;
 
   }
 

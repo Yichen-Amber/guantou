@@ -4,9 +4,9 @@
       <button @click="create">新增标签</button>
     </div>
     <ul class="current">
-      <li v-for="tag in dataSource" :key="tag"
+      <li v-for="tag in dataSource" :key="tag.id"
           :class="{selected:selectedTags.indexOf(tag)>=0}"
-          @click="toggle(tag)">{{tag}}
+          @click="toggle(tag)">{{tag.name}}
       </li>
 
     </ul>
@@ -53,11 +53,9 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column-reverse;
-
     > .current {
       display: flex;
       flex-wrap: wrap;
-
       > li {
         $bg: #d9d9d9;
         background: #d9d9d9;
@@ -68,17 +66,14 @@
         padding: 0 16px;
         margin-right: 12px;
         margin-top: 4px;
-
         &.selected {
           background: darken($bg, 50%);
           color: white;
         }
       }
     }
-
     > .new {
       padding-top: 16px;
-
       button {
         background: transparent;
         border: none;

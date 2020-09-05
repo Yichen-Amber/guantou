@@ -7,7 +7,6 @@
                 placeholder="在这里输入备注"
                 @update:value="onUpdateNotes"/>
     </div>
-
     <Tags :data-source.sync="tags" @update:value="onUpdateTags"/>
   </Layout>
 </template>
@@ -24,41 +23,33 @@
 
   const recordList = recordListModel.fetch();
   const tagList = tagListModel.fetch();
-
   window.localStorage.setItem('version', '0.0.1');
 
   @Component({
     components: {FormItem, Tags, Types, NumberPad}
-
   })
-
   export default class Money extends Vue {
     tags = tagList;
     recordList: RecordItem[] = recordList;
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
     };
-
     onUpdateTags(value: string[]) {
       this.record.tags = value;
     }
-
     onUpdateNotes(value: string) {
       this.record.notes = value;
     }
-
     saveRecord() {
       const record2: RecordItem = recordListModel.clone(this.record);
       record2.createdAt = new Date();
       this.recordList.push(record2);
       console.log(this.recordList);
     }
-
     @Watch('recordList')
     onRecordListChange() {
       recordListModel.save(this.recordList);
     }
-
   }
 </script>
 <style lang="scss">
@@ -66,7 +57,6 @@
     display: flex;
     flex-direction: column-reverse;
   }
-
   .notes {
     padding: 12px 0;
   }
