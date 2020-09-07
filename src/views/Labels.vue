@@ -23,12 +23,12 @@
   import tagListModel from '@/assets/Models/tagListModel';
   import Button from '@/components/Button.vue';
 
-  tagListModel.fetch();
+
   @Component({
     components: {Button}
   })
   export default class Labels extends Vue {
-    tags = tagListModel.data;
+    tags = window.tagList;
 
     createTag() {
       const name = window.prompt('请输入标签名');
@@ -48,6 +48,7 @@
     background: white;
     font-size: 16px;
     padding-left: 16px;
+
     > .tag {
       min-height: 44px;
       display: flex;
@@ -69,7 +70,6 @@
     border: none;
     height: 40px;
     padding: 0 16px;
-
     &-wrapper {
       text-align: center;
       padding: 16px;
