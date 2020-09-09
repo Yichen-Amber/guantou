@@ -10,8 +10,8 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',       //根路径
-    redirect: '/money'  //重定向
+    path: '/',
+    redirect: '/money'
   },
   {
     path: '/money',
@@ -38,4 +38,5 @@ const routes = [
 const router = new VueRouter({
   routes
 });
+
 export default router;
