@@ -1,6 +1,5 @@
 import recordStore from '@/store/recordStore';
 import tagStore from '@/store/tagStore';
-
 const store = {
   count: 0,
   addCount() {
@@ -10,6 +9,5 @@ const store = {
   ...tagStore,
 };
 
-console.log(store);
 
 export default store;

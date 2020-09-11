@@ -47,6 +47,7 @@
         }
       }
     }
+
     goBack() {
       this.$router.back();
     }
