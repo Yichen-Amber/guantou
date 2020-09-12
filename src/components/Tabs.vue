@@ -3,7 +3,6 @@
     <li v-for="item in dataSource" :key="item.value"
         :class="liClass(item)" @click="select(item)">{{item.text}}
     </li>
-
   </ul>
 </template>
 <script lang="ts">
@@ -11,6 +10,7 @@
   import {Component, Prop} from 'vue-property-decorator';
 
   type DataSourceItem = { text: string, value: string }
+
   @Component
   export default class Tabs extends Vue {
     @Prop({required: true, type: Array})
