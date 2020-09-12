@@ -10,9 +10,11 @@
       </li>
     </ul>
   </div>
+
 </template>
 
 <script lang="ts">
+
   import {Component} from 'vue-property-decorator';
   import {mixins} from 'vue-class-component';
   import {TagHelper} from '@/mixins/tagHelper';
@@ -20,15 +22,12 @@
   @Component
   export default class Tags extends mixins(TagHelper) {
     selectedTags: string[] = [];
-
     get tagList() {
       return this.$store.state.tagList;
     }
-
     created() {
       this.$store.commit('fetchTags');
     }
-
     toggle(tag: string) {
       const index = this.selectedTags.indexOf(tag);
       if (index >= 0) {
@@ -53,7 +52,7 @@
       display: flex;
       flex-wrap: wrap;
       > li {
-        $bg: #d9d9d9;
+        $bg: #D9D9D9;
         background: $bg;
         $h: 24px;
         height: $h;

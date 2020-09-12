@@ -21,7 +21,6 @@
   import {Component} from 'vue-property-decorator';
   import FormItem from '@/components/Money/FormItem.vue';
   import Button from '@/components/Button.vue';
-
   @Component({
     components: {Button, FormItem},
   })
@@ -29,7 +28,6 @@
     get currentTag() {
       return this.$store.state.currentTag;
     }
-
     created() {
       const id = this.$route.params.id;
       this.$store.commit('fetchTags');
@@ -40,17 +38,16 @@
     }
     update(name: string) {
       if (this.currentTag) {
-        this.$store.commit('updateTag',
-          {id: this.currentTag.id, name});
+        this.$store.commit('updateTag', {
+          id: this.currentTag.id, name
+        });
       }
     }
-
     remove() {
       if (this.currentTag) {
         this.$store.commit('removeTag', this.currentTag.id);
       }
     }
-
     goBack() {
       this.$router.back();
     }
@@ -66,15 +63,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     > .title {
     }
-
     > .leftIcon {
       width: 24px;
       height: 24px;
     }
-
     > .rightIcon {
       width: 24px;
       height: 24px;
