@@ -14,17 +14,19 @@
 </template>
 
 <script lang="ts">
-
-  import {Component} from 'vue-property-decorator';
+  import Vue from 'vue';
+  import {Component, Prop} from 'vue-property-decorator';
   import {mixins} from 'vue-class-component';
-  import {TagHelper} from '@/mixins/tagHelper';
+  import {TagHelper} from '@/mixins/TagHelper';
 
   @Component
   export default class Tags extends mixins(TagHelper) {
     selectedTags: string[] = [];
+
     get tagList() {
       return this.$store.state.tagList;
     }
+
     created() {
       this.$store.commit('fetchTags');
     }
@@ -57,9 +59,9 @@
         $h: 24px;
         height: $h;
         line-height: $h;
-        border-radius: $h/2;
+        border-radius: 12px;
         padding: 0 16px;
-        margin-right: 12px;
+        margin-right: $h/2;
         margin-top: 4px;
 
         &.selected {
