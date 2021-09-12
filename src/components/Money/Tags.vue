@@ -61,7 +61,7 @@
         line-height: $h;
         border-radius: 12px;
         padding: 0 16px;
-        margin-right: $h/2;
+        margin-right: ($h/2);
         margin-top: 4px;
 
         &.selected {
